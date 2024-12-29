@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/zones")
 public class ZoneController {
 
-    private ZoneService zoneService;
-
     @Autowired
+    private ZoneService zoneService;
 
     @PostMapping
     public Zone createZone(@RequestBody Zone zone) {

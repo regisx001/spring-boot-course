@@ -10,9 +10,8 @@ import com.example.demo.repositories.CityRepository;
 
 @Service
 public class CityService {
-    private CityRepository cityRepository;
-
     @Autowired
+    private CityRepository cityRepository;
 
     public City createCity(City city) {
         return cityRepository.save(city);

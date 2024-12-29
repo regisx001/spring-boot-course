@@ -10,9 +10,8 @@ import com.example.demo.repositories.ZoneRepository;
 
 @Service
 public class ZoneService {
-    private ZoneRepository zoneRepository;
-
     @Autowired
+    private ZoneRepository zoneRepository;
 
     public Zone createZone(Zone zone) {
         return zoneRepository.save(zone);

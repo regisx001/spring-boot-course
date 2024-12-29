@@ -10,9 +10,8 @@ import com.example.demo.repositories.RestaurantRepository;
 
 @Service
 public class RestaurantService {
-    private RestaurantRepository restaurantRepository;
-
     @Autowired
+    private RestaurantRepository restaurantRepository;
 
     public Restaurant createRestaurant(Restaurant restaurant) {
         return restaurantRepository.save(restaurant);

@@ -10,9 +10,8 @@ import com.example.demo.repositories.MealRepository;
 
 @Service
 public class MealService {
-    private MealRepository mealRepository;
-
     @Autowired
+    private MealRepository mealRepository;
 
     public Meal createMeal(Meal meal) {
         return mealRepository.save(meal);

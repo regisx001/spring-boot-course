@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private UserService userService;
-
     @Autowired
+    private UserService userService;
 
     @PostMapping
     public User createUser(@RequestBody User user) {

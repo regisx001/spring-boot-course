@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/restaurants")
 public class RestaurantController {
 
-    private RestaurantService restaurantService;
-
     @Autowired
+    private RestaurantService restaurantService;
 
     @PostMapping
     public Restaurant createRestaurant(@RequestBody Restaurant restaurant) {

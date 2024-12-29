@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/specialities")
 public class SpecialityController {
 
-    private SpecialityService specialityService;
-
     @Autowired
+    private SpecialityService specialityService;
 
     @PostMapping
     public Speciality createSpeciality(@RequestBody Speciality speciality) {

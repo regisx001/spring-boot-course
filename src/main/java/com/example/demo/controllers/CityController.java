@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api/cities")
 public class CityController {
 
-    private CityService cityService;
-
     @Autowired
+    private CityService cityService;
 
     @PostMapping
     public City createCity(@RequestBody City city) {

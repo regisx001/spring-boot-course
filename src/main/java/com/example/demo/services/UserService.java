@@ -10,9 +10,8 @@ import com.example.demo.repositories.UserRepository;
 
 @Service
 public class UserService {
-    private UserRepository userRepository;
-
     @Autowired
+    private UserRepository userRepository;
 
     public User createUser(User user) {
         return userRepository.save(user);

@@ -10,9 +10,8 @@ import com.example.demo.repositories.SpecialityRepository;
 
 @Service
 public class SpecialityService {
-    private SpecialityRepository specialityRepository;
-
     @Autowired
+    private SpecialityRepository specialityRepository;
 
     public Speciality createSpeciality(Speciality speciality) {
         return specialityRepository.save(speciality);
