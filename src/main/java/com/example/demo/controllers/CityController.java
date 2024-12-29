@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Entities.User;
-import com.example.demo.services.UserService;
+import com.example.demo.Entities.City;
+import com.example.demo.services.CityService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,35 +17,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping("/api/users")
-public class UserController {
+@RequestMapping("/api/cities")
+public class CityController {
 
-    private UserService userService;
+    private CityService cityService;
 
     @Autowired
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public City createCity(@RequestBody City city) {
+        return cityService.createCity(city);
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUser();
+    public List<City> getAllCitys() {
+        return cityService.getAllCity();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public City getCityById(@PathVariable Long id) {
+        return cityService.getCityById(id);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
-        return userService.updateUser(id, user);
+    public City updateCity(@PathVariable Long id, @RequestBody City city) {
+        return cityService.updateCity(id, city);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    public void deleteCity(@PathVariable Long id) {
+        cityService.deleteCity(id);
     }
 }

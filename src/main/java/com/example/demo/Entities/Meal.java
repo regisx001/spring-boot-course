@@ -7,46 +7,46 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="users")
-public class User {
+@Table(name = "meals")
+public class Meal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private    Long id;
-
-    private String name;
-    
-    private String email;
-    
-    protected User() {}
-
-    public User(String name,String email){
-        this.name = name;
-        this.email = email;
-    }
+    private Long id;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    private String name;
+    private double price;
+
+    protected Meal() {
+    }
+
+    public Meal(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public double getPrice() {
+        return this.price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(double price) {
+        this.price = price;
     }
-
 
 }

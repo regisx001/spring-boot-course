@@ -10,31 +10,29 @@ import com.example.demo.repositories.UserRepository;
 
 @Service
 public class UserService {
-    @Autowired
     private UserRepository userRepository;
-    
-    
-    public User createUser(User user){
-    return userRepository.save(user);
+
+    @Autowired
+
+    public User createUser(User user) {
+        return userRepository.save(user);
     }
 
-    public List<User> getAllUser(){
+    public List<User> getAllUser() {
         return userRepository.findAll();
     }
 
-    public User getUserById(Long id){
+    public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
-
-    public User updateUser(Long id,User user){
+    public User updateUser(Long id, User user) {
         user.setId(id);
         return userRepository.save(user);
-    }   
-
-    public void deleteUser(Long id){
-        userRepository.deleteById(id);
     }
 
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
 
 }

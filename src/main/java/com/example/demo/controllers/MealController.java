@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Entities.User;
-import com.example.demo.services.UserService;
+import com.example.demo.Entities.Meal;
+import com.example.demo.services.MealService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,35 +17,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping("/api/users")
-public class UserController {
+@RequestMapping("/api/meals")
+public class MealController {
 
-    private UserService userService;
+    private MealService mealService;
 
     @Autowired
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public Meal createMeal(@RequestBody Meal meal) {
+        return mealService.createMeal(meal);
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUser();
+    public List<Meal> getAllMeals() {
+        return mealService.getAllMeal();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public Meal getMealById(@PathVariable Long id) {
+        return mealService.getMealById(id);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
-        return userService.updateUser(id, user);
+    public Meal updateMeal(@PathVariable Long id, @RequestBody Meal meal) {
+        return mealService.updateMeal(id, meal);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    public void deleteMeal(@PathVariable Long id) {
+        mealService.deleteMeal(id);
     }
 }
